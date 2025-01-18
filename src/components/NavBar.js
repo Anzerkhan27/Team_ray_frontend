@@ -7,6 +7,7 @@ const NavBar = () => {
       <ul style={{ listStyle: "none", display: "flex", gap: "15px" }}>
                 <li><a href="/" style={{ color: "white", textDecoration: "none" }}>Home</a></li>
                 <li><a href="/about" style={{ color: "white", textDecoration: "none" }}>About Us</a></li>
+                <li><a href="/projects" style={{ color: "white", textDecoration: "none" }}>Projects</a></li>
         </ul>
     </nav>
   );
