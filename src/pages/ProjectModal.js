@@ -39,6 +39,7 @@ const ProjectModal = ({ project, closeModal }) => {
                     src={project.image || "https://via.placeholder.com/500"}
                     alt={project.name}
                     style={{ width: "100%", borderRadius: "8px", marginBottom: "15px" }}
+                    onError={(e) => console.error("Modal Image failed to load:", e.target.src)}
                 />
                 <h2>{project.name}</h2>
                 <p>{project.description}</p>

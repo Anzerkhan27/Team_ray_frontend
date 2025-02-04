@@ -8,6 +8,8 @@ const NavBar = () => {
                 <li><a href="/" style={{ color: "white", textDecoration: "none" }}>Home</a></li>
                 <li><a href="/about" style={{ color: "white", textDecoration: "none" }}>About Us</a></li>
                 <li><a href="/projects" style={{ color: "white", textDecoration: "none" }}>Projects</a></li>
+                <li><a href="/Members" style={{ color: "white", textDecoration: "none" }}>Team</a></li>
+
         </ul>
     </nav>
   );
