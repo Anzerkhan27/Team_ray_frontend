@@ -1,18 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { FiMoon, FiSun } from "react-icons/fi";
+import "./NavBar.css"; // ✅ Now using pure CSS
 
 const NavBar = () => {
-  return (
-    <nav style={{ padding: "10px", background: "#00509e", color: "white" }}>
-      <h1>Team Ray</h1>
-      <ul style={{ listStyle: "none", display: "flex", gap: "15px" }}>
-                <li><a href="/" style={{ color: "white", textDecoration: "none" }}>Home</a></li>
-                <li><a href="/about" style={{ color: "white", textDecoration: "none" }}>About Us</a></li>
-                <li><a href="/projects" style={{ color: "white", textDecoration: "none" }}>Projects</a></li>
-                <li><a href="/Members" style={{ color: "white", textDecoration: "none" }}>Team</a></li>
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-        </ul>
-    </nav>
-  );
+    // Detect Scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Toggle Dark Mode
+    useEffect(() => {
+        if (isDarkMode) {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
+    }, [isDarkMode]);
+
+    return (
+        <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+            <div className="navbar-container">
+                {/* Logo */}
+                <Link to="/" className="logo">TEAM RAY</Link>
+
+                {/* Navigation Links */}
+                <ul className="nav-links">
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/projects">Projects</Link></li>
+                    <li><Link to="/members">Team</Link></li>
+                    <li><Link to="/join" className="join-btn">Join Us</Link></li>
+                </ul>
+
+                {/* Dark Mode Toggle */}
+                <button className="dark-mode-toggle" onClick={() => setIsDarkMode(!isDarkMode)}>
+                    {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+                </button>
+            </div>
+        </nav>
+    );
 };
 
 export default NavBar;
