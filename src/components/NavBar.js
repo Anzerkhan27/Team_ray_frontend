@@ -30,14 +30,16 @@ const NavBar = () => {
         <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
             <div className="navbar-container">
                 {/* Logo */}
-                <Link to="/" className="logo">TEAM RAY</Link>
+                <Link to="/" className="logo">
+                    TEAM <span className="logo-maroon">RAY</span>
+                </Link>
 
                 {/* Navigation Links */}
                 <ul className="nav-links">
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/projects">Projects</Link></li>
                     <li><Link to="/members">Team</Link></li>
-                    <li><Link to="/join" className="join-btn">Join Us</Link></li>
+                    <li><Link to="/join">Join Us</Link></li>
                 </ul>
 
                 {/* Dark Mode Toggle */}

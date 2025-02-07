@@ -1,14 +1,17 @@
+/* Home Page General */
 .home-container {
     position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
     font-family: "Poppins", sans-serif;
+    background-color: white; /* Light mode background */
+    transition: background 0.3s ease;
 }
 
+/* Background Video */
 .background-video {
     position: absolute;
     top: 0;
@@ -19,32 +22,54 @@
     z-index: -1;
 }
 
+/* Dark Mode Background */
+.dark-mode .home-container {
+    background-color: black;
+}
+
+/* Hero Content */
 .hero-content {
     z-index: 1;
     position: relative;
     max-width: 800px;
 }
 
+/* Hero Title */
 .hero-content h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: black; /* Light mode text */
 }
 
+/* Dark Mode Text */
+.dark-mode .hero-content h1 {
+    color: white;
+}
+
+/* Hero Subtitle */
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    color: #666; /* Light mode text */
 }
 
+/* Dark Mode Subtitle */
+.dark-mode .hero-content p {
+    color: #ddd;
+}
+
+/* Buttons */
 .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
+/* Button Styling */
 .btn {
     padding: 12px 24px;
-    background-color: #ff5722;
+    background-color: #5E2129; /* Deep Maroon */
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -52,26 +77,43 @@
     transition: all 0.3s ease;
 }
 
+/* Button Hover */
 .btn:hover {
-    background-color: #e64a19;
+    background-color: #44151b;
 }
 
+/* Secondary Button */
 .btn-secondary {
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid black;
     padding: 10px 22px;
-}
-
-.btn-secondary:hover {
-    background-color: white;
     color: black;
 }
 
+/* Secondary Button in Dark Mode */
+.dark-mode .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+/* Hover Effect for Secondary Button */
+.btn-secondary:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Scroll Down Indicator */
 .scroll-down {
     position: absolute;
     bottom: 20px;
     font-size: 18px;
     animation: bounce 2s infinite;
+    color: black;
+}
+
+/* Dark Mode Scroll Down */
+.dark-mode .scroll-down {
+    color: white;
 }
 
 @keyframes bounce {
