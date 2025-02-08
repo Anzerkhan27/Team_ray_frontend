@@ -10,7 +10,7 @@ const NavBar = () => {
     // Detect Scroll
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 50); // Trigger change when scrolled more than 50px
         };
 
         window.addEventListener("scroll", handleScroll);
