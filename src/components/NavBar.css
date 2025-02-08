@@ -14,6 +14,7 @@
     transition: all 0.3s ease;
     z-index: 1000;
     background-color: white; /* Light mode default */
+    font-family: "Inter", sans-serif; /* Thinner font family for navbar */
 }
 
 /* Maroon color for "RAY" */
@@ -32,11 +33,13 @@
     background-color: black; /* Keep it black in dark mode */
 }
 
+/* Navbar When Scrolled (Thinner) */
 .navbar.scrolled {
     padding-top: 1px; /* Reduced top padding when scrolled */
     padding-bottom: 1px; /* Reduced bottom padding when scrolled */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
 /* Dark Mode Scrolled */
 .dark-mode .navbar.scrolled {
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Light shadow in dark mode */
@@ -54,6 +57,7 @@
 /* Logo */
 .logo {
     font-size: 16px; /* Reduced logo font size */
+    font-family: "Poppins", sans-serif; /* Poppins for sharper logo text */
     font-weight: bold;
     color: black;
     text-decoration: none;
@@ -82,6 +86,7 @@
     list-style: none;
     display: flex;
     gap: 15px; /* Reduced gap between links */
+    font-family: "Inter", sans-serif; /* Inter font for navbar links */
 }
 
 .nav-links li {

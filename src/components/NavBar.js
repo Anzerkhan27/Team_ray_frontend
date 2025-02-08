@@ -4,7 +4,7 @@ import { FiMoon, FiSun } from "react-icons/fi";
 import "./NavBar.css"; // ✅ Now using pure CSS
 
 const NavBar = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true); // Dark mode set to true by default
     const [isScrolled, setIsScrolled] = useState(false);
 
     // Detect Scroll
@@ -17,14 +17,23 @@ const NavBar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Toggle Dark Mode
+    // Set dark mode class on the body when the page loads
     useEffect(() => {
-        if (isDarkMode) {
-            document.body.classList.add("dark-mode");
-        } else {
-            document.body.classList.remove("dark-mode");
-        }
-    }, [isDarkMode]);
+        document.body.classList.add("dark-mode"); // Always add dark mode on initial load
+    }, []);
+
+    // Toggle Dark Mode
+    const toggleDarkMode = () => {
+        setIsDarkMode((prevMode) => {
+            const newMode = !prevMode;
+            if (newMode) {
+                document.body.classList.add("dark-mode");
+            } else {
+                document.body.classList.remove("dark-mode");
+            }
+            return newMode;
+        });
+    };
 
     return (
         <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
@@ -43,7 +52,7 @@ const NavBar = () => {
                 </ul>
 
                 {/* Dark Mode Toggle */}
-                <button className="dark-mode-toggle" onClick={() => setIsDarkMode(!isDarkMode)}>
+                <button className="dark-mode-toggle" onClick={toggleDarkMode}>
                     {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
                 </button>
             </div>
