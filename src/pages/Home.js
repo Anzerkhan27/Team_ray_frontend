@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import roverImage from "../assets/space_rover_black_bg.png"; // Import the image directly
 import "./Home.css"; // Importing styles
 
 const Home = () => {
     return (
-        <div className="home-container">
-            {/* Background Video */}
-            <video autoPlay loop muted className="background-video">
-                <source src="/videos/mars_rover.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-
+        <div className="home-container" style={{
+            backgroundImage: `url(${roverImage})`, // Use the imported image here
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            transition: "opacity 2s ease",
+        }}>
             {/* Hero Content */}
             <div className="hero-content">
                 <motion.h1 

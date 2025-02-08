@@ -4,7 +4,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 18px 40px; /* Default padding */
+    padding-top: 8px; /* Reduced top padding */
+    padding-bottom: 6px; /* Reduced bottom padding */
+    padding-left: 30px;
+    padding-right: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,18 +27,16 @@
     color: #5E2129;
 }
 
-
 /* Dark Mode Navbar */
 .dark-mode .navbar {
     background-color: black; /* Keep it black in dark mode */
 }
 
-/* Navbar When Scrolled (Thinner) */
 .navbar.scrolled {
-    padding: 5px 40px; /* Reduce height */
+    padding-top: 1px; /* Reduced top padding when scrolled */
+    padding-bottom: 1px; /* Reduced bottom padding when scrolled */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-
 /* Dark Mode Scrolled */
 .dark-mode .navbar.scrolled {
     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Light shadow in dark mode */
@@ -52,11 +53,11 @@
 
 /* Logo */
 .logo {
-    font-size: 22px;
+    font-size: 16px; /* Reduced logo font size */
     font-weight: bold;
     color: black;
     text-decoration: none;
-    letter-spacing: 2px;
+    letter-spacing: 1px; /* Reduced letter spacing */
     transition: color 0.3s ease;
 }
 
@@ -67,24 +68,24 @@
 
 /* Logo Image */
 .navbar-logo {
-    height: 40px; /* Default size */
+    height: 25px; /* Smaller logo */
     transition: height 0.3s ease; /* Smooth shrink effect */
 }
 
 /* Shrink Logo When Scrolled */
 .navbar.scrolled .navbar-logo {
-    height: 30px; /* Smaller logo */
+    height: 25px; /* Even smaller logo when scrolled */
 }
 
 /* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduced gap between links */
 }
 
 .nav-links li {
-    font-size: 16px;
+    font-size: 15px; /* Smaller font size */
 }
 
 .nav-links a {
@@ -107,7 +108,7 @@
 .join-btn {
     background-color: #5E2129; /* Deep Maroon */
     color: white;
-    padding: 8px 14px;
+    padding: 6px 12px; /* Smaller padding */
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -124,7 +125,7 @@
     border: none;
     color: black;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px; /* Smaller font size */
     transition: color 0.3s ease;
 }
 
