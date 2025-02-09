@@ -1,0 +1,99 @@
+/* Mission Section */
+.mission {
+    text-align: left;
+    padding: 100px 5%;
+    background-image: url("../assets/Missions_bg.png"); /* Update with correct image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+/* Section Title */
+.mission-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+}
+
+/* Subtitle */
+.mission-subtext {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #bbb;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Mission Content - Split Sections */
+.mission-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mission Section - Alternating Layout */
+.mission-section {
+    padding: 20px;
+    border-left: 4px solid #5E2129; /* Deep Maroon Accent */
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black for readability */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Alternating Right Alignment */
+.mission-section.right {
+    border-left: none;
+    border-right: 4px solid #5E2129;
+    align-self: flex-end;
+}
+
+/* Titles */
+.mission-section h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Text */
+.mission-section p, .mission-section ul {
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.7;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* List Styling */
+.mission-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mission-section ul li {
+    padding: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-title {
+        font-size: 2.5rem;
+    }
+
+    .mission-content {
+        gap: 40px;
+    }
+
+    .mission-section {
+        padding: 15px;
+    }
+}

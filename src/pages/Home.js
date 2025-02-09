@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import roverImage from "../assets/space_rover_black_bg.png"; // Import the image directly
 import "./Home.css"; // Importing styles
 import Specifications from "../components/Specifications"; // Import the Specifications component
+import Mission from "../components/Mission";
+
 
 const Home = () => {
     return (
@@ -44,7 +46,11 @@ const Home = () => {
 
             {/* Specifications Section (Now correctly placed below Hero Section) */}
             <Specifications />
+            <Mission />
+            
         </>
+       
+        
     );
 };
 
