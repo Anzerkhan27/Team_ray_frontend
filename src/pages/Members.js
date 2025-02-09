@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MemberModal from "./MemberModal";
+import teamRayLogo from "../assets/Team_ray_Logo.png"; // ✅ Import Team Ray Logo
+import "./Members.css"; // Import external styles
 
 const Members = () => {
     const [members, setMembers] = useState([]);
@@ -31,44 +33,53 @@ const Members = () => {
     };
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>Team Members</h1>
-            <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-                gap: "20px",
-            }}>
+        <div className="members-container">
+            {/* 🚀 Team Introduction + Logo Section */}
+            <div className="team-intro-section">
+                {/* Left Side - Team Introduction */}
+                <div className="team-intro">
+                    <h1 className="team-title">Meet Team Ray</h1>
+                    <p className="team-description">
+                        At <span className="highlight">Team Ray 🚀</span>, we are a passionate group of students from the 
+                        <strong> University of Huddersfield</strong>, specializing in Aero/Astronautical, Mechanical, 
+                        Controls & Instrumentation, Electronics, and Software Engineering. 
+                        We collaborate to design, analyze, and prototype <strong>rovers and rockets</strong>, 
+                        competing in national aerospace challenges.
+                    </p>
+                    <p className="team-mission">
+                        Our mission is to <strong>foster innovation</strong>, enhance engineering skills, and tackle 
+                        <span className="highlight"> real-world space exploration scenarios.</span>
+                    </p>
+                </div>
+
+                {/* Right Side - Team Ray Logo */}
+                <div className="team-logo">
+                    <img src={teamRayLogo} alt="Team Ray Logo" />
+                </div>
+            </div>
+
+            {/* 🚀 Divider */}
+            <div className="section-divider"></div>
+
+            {/* 📌 Team Members Section */}
+            <h2 className="members-title">Our Team Members</h2>
+            <div className="members-grid">
                 {members.map((member) => (
-                    <div
-                        key={member.id}
-                        style={{
-                            width: "250px",
-                            cursor: "pointer",
-                            boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
-                            borderRadius: "8px",
-                            overflow: "hidden",  // Ensures everything fits in square
-                            background: "#fff",
-                        }}
-                        onClick={() => openModal(member)}
-                    >
-                        {/* Image takes full width, except bottom */}
-                        <img
-                            src={member.image || "https://via.placeholder.com/250"}
-                            alt={member.name}
-                            style={{
-                                width: "100%",
-                                height: "250px",  // Ensures square shape
-                                objectFit: "cover",
-                            }}
+                    <div key={member.id} className="member-card" onClick={() => openModal(member)}>
+                        <img 
+                            src={member.image || "https://via.placeholder.com/250"} 
+                            alt={member.name} 
+                            className="member-image" 
                         />
-                        <div style={{ padding: "10px" }}>
-                            <h3 style={{ margin: "5px 0", fontSize: "1.1em" }}>{member.name}</h3>
-                            <p style={{ fontSize: "0.9em", color: "#555" }}><strong>{member.role}</strong></p>
+                        <div className="member-info">
+                            <h3>{member.name}</h3>
+                            <p><strong>{member.role}</strong></p>
                         </div>
                     </div>
                 ))}
             </div>
 
+            {/* 🖼️ Member Modal */}
             {isModalOpen && selectedMember && (
                 <MemberModal member={selectedMember} closeModal={closeModal} />
             )}

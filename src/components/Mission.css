@@ -1,7 +1,7 @@
 /* Mission Section */
 .mission {
     text-align: left;
-    padding: 100px 5%;
+    padding: 60px 5%;
     background-image: url("../assets/Missions_bg.png"); /* Update with correct image path */
     background-size: cover;
     background-position: center;
@@ -48,6 +48,7 @@
     background: rgba(0, 0, 0, 0.6); /* Semi-transparent black for readability */
     padding: 20px;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform & shadow */
 }
 
 /* Alternating Right Alignment */
@@ -55,6 +56,12 @@
     border-left: none;
     border-right: 4px solid #5E2129;
     align-self: flex-end;
+}
+
+/* 🔥 Enhanced Hover Effect (15% Enlargement) */
+.mission-section:hover {
+    transform: scale(1.15); /* Enlarges by 15% */
+    box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3); /* Stronger glow effect */
 }
 
 /* Titles */
@@ -95,5 +102,10 @@
 
     .mission-section {
         padding: 15px;
+    }
+
+    /* Reduce Hover Effect for Mobile */
+    .mission-section:hover {
+        transform: scale(1.05);
     }
 }

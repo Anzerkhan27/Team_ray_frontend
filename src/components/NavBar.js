@@ -52,9 +52,9 @@ const NavBar = () => {
                 {/* Navigation Links */}
                 <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
                     <li><Link to="/about" onClick={toggleMobileMenu}>About</Link></li>
-                    <li><Link to="/projects" onClick={toggleMobileMenu}>Projects</Link></li>
                     <li><Link to="/members" onClick={toggleMobileMenu}>Team</Link></li>
-                    <li><Link to="/join" onClick={toggleMobileMenu}>Join Us</Link></li>
+                    <li><Link to="/projects" onClick={toggleMobileMenu}>Projects</Link></li>
+                    <li><Link to="/join" onClick={toggleMobileMenu}>Get in touch</Link></li>
                 </ul>
 
                 {/* Dark Mode Toggle */}

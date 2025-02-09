@@ -1,11 +1,50 @@
+/* 🔥 Global Font Styling (Without Affecting Navbar) */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif; /* Set Roboto as the base font */
+  background-color: black; /* Keep space theme */
+  color: white;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
-  color: #333;
 }
 
-h1 {
-  color: #00509e;
+/* 📢 Main Titles - SpaceX Style */
+h1, h2, .mission-title, .specs-title {
+  font-family: "Bebas Neue", sans-serif; /* Futuristic, SpaceX Style */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* 📝 Subtitles & General Text */
+h3, p {
+  font-family: "Roboto", sans-serif; /* Clean and professional */
+  font-weight: 400;
+  color: #ddd;
+}
+
+/* 🚀 Scroll Indicator */
+.scroll-down {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  animation: bounce 2s infinite;
+  color: white;
+}
+
+/* 🔥 Button Styling */
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+
+/* 📌 Responsive Tweaks */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
 }
