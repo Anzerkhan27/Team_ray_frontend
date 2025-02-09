@@ -1,0 +1,45 @@
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ddd;
+    color: black;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Dark Mode Footer */
+.dark-mode .footer {
+    background-color: black;
+    color: white;
+}
+
+/* Footer Logos */
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Increased space between logos */
+}
+
+.footer-logos img {
+    height: 55px; /* Increased logo size */
+    object-fit: contain; /* Prevent distortion */
+}
+
+/* Dark Mode Footer Logos */
+.dark-mode .footer-logos img {
+    filter: brightness(0.9); /* Slightly brighter in dark mode */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-logos {
+        flex-direction: column;
+        gap: 15px; /* Slightly increased gap for better spacing */
+    }
+    .footer-logos img {
+        height: 40px; /* Increased logo size for smaller screens */
+    }
+}
