@@ -1,38 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FiMoon, FiSun } from "react-icons/fi";
-import "./NavBar.css"; // ✅ Now using pure CSS
+import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
+import "./NavBar.css"; 
 
 const NavBar = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true); // Dark mode set to true by default
+    const [isDarkMode, setIsDarkMode] = useState(true); // Dark mode default
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
 
     // Detect Scroll
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50); // Trigger change when scrolled more than 50px
+            setIsScrolled(window.scrollY > 50);
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     // Set dark mode class on the body when the page loads
     useEffect(() => {
-        document.body.classList.add("dark-mode"); // Always add dark mode on initial load
+        document.body.classList.add("dark-mode"); 
     }, []);
 
     // Toggle Dark Mode
     const toggleDarkMode = () => {
         setIsDarkMode((prevMode) => {
             const newMode = !prevMode;
-            if (newMode) {
-                document.body.classList.add("dark-mode");
-            } else {
-                document.body.classList.remove("dark-mode");
-            }
+            document.body.classList.toggle("dark-mode", newMode);
             return newMode;
         });
+    };
+
+    // Toggle Mobile Menu
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     return (
@@ -43,12 +44,17 @@ const NavBar = () => {
                     TEAM <span className="logo-maroon">RAY</span>
                 </Link>
 
+                {/* Mobile Menu Icon */}
+                <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
+                    {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+                </button>
+
                 {/* Navigation Links */}
-                <ul className="nav-links">
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/projects">Projects</Link></li>
-                    <li><Link to="/members">Team</Link></li>
-                    <li><Link to="/join">Join Us</Link></li>
+                <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
+                    <li><Link to="/about" onClick={toggleMobileMenu}>About</Link></li>
+                    <li><Link to="/projects" onClick={toggleMobileMenu}>Projects</Link></li>
+                    <li><Link to="/members" onClick={toggleMobileMenu}>Team</Link></li>
+                    <li><Link to="/join" onClick={toggleMobileMenu}>Join Us</Link></li>
                 </ul>
 
                 {/* Dark Mode Toggle */}
@@ -61,3 +67,6 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+

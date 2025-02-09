@@ -17,30 +17,19 @@
     box-shadow: none; /* Remove any shadow */
 }
 
-/* When Scrolled - Opaque Navbar with background */
+/* When Scrolled - Opaque Navbar */
 .navbar.scrolled {
-    padding-top: 8px; /* Reduced top padding when scrolled */
-    padding-bottom: 8px; /* Reduced bottom padding when scrolled */
-    background-color: white; /* White background in light mode */
-    opacity: 1; /* Full opacity */
-    font-size: 0.8rem; /* Reduced font size for the entire navbar */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: white;
+    opacity: 1;
+    font-size: 0.8rem;
 }
 
 /* Dark Mode when Scrolled */
 .dark-mode .navbar.scrolled {
-    background-color: black; /* Black background in dark mode */
-    opacity: 1; /* Full opacity */
-}
-
-/* Maroon color for "RAY" */
-.logo-maroon {
-    color: #5E2129; /* Deep Maroon */
-    font-weight: bold;
-}
-
-/* Dark Mode - Keep "RAY" Maroon */
-.dark-mode .logo-maroon {
-    color: #5E2129;
+    background-color: black;
+    opacity: 1;
 }
 
 /* Navbar Container */
@@ -54,70 +43,131 @@
 
 /* Logo */
 .logo {
-    font-size: 18px; /* Slightly larger logo font size */
-    font-family: "Poppins", sans-serif; /* Poppins for sharper logo text */
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
     font-weight: bold;
-    color: black; /* Dark color for logo */
+    color: black;
     text-decoration: none;
-    letter-spacing: 1px; /* Reduced letter spacing */
+    letter-spacing: 1px;
     transition: color 0.3s ease;
 }
 
 /* Reduced Logo Size When Scrolled */
 .navbar.scrolled .logo {
-    font-size: 14px; /* Smaller logo font size when scrolled */
+    font-size: 14px;
 }
 
 /* Dark Mode Logo */
 .dark-mode .logo {
-    color: white; /* White logo for dark mode */
+    color: white;
 }
 
 /* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduced gap between links */
-    font-family: "Inter", sans-serif; /* Inter font for navbar links */
+    gap: 15px;
+    font-family: "Inter", sans-serif;
 }
 
 .nav-links li {
-    font-size: 15px; /* Smaller font size */
+    font-size: 15px;
     transition: font-size 0.3s ease;
 }
 
 /* Reduced Font Size for Links When Scrolled */
 .navbar.scrolled .nav-links li {
-    font-size: 12px; /* Smaller font size for links when scrolled */
+    font-size: 12px;
 }
 
 .nav-links a {
-    color: black; /* Default color */
+    color: black;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 /* Dark Mode nav links */
 .dark-mode .nav-links a {
-    color: white; /* White links in dark mode */
+    color: white;
 }
 
 /* Hover Effect */
 .nav-links a:hover {
-    color: #5E2129; /* Deep Maroon */
+    color: #5E2129;
 }
 
 /* Dark Mode Toggle */
 .dark-mode-toggle {
     background: transparent;
     border: none;
-    color: black; /* Toggle color */
+    color: black;
     cursor: pointer;
-    font-size: 18px; /* Smaller font size */
+    font-size: 18px;
     transition: color 0.3s ease;
 }
 
 /* Dark Mode Toggle in Dark Mode */
 .dark-mode .dark-mode-toggle {
     color: white;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+/* Dark Mode Mobile Icon */
+.dark-mode .mobile-menu-icon {
+    color: white;
+}
+
+.dark-mode .logo-maroon {
+    color: #5E2129
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .dark-mode .nav-links {
+        background: black;
+    }
+      
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .nav-links a {
+        color: black;
+        font-size: 18px;
+    }
+
+    .dark-mode .nav-links a {
+        color: white;
+    }
 }
