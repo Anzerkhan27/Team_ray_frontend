@@ -133,9 +133,25 @@
 
 /* Mobile Menu */
 @media (max-width: 768px) {
-    .mobile-menu-icon {
-        display: block;
-    }
+    /* Mobile Menu Icon - Align to Right */
+/* Mobile Menu Icon - Align to Right */
+.mobile-menu-icon {
+    display: block;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 22px;
+    transition: color 0.3s ease;
+    margin-left: auto; /* Pushes the icon to the right */
+}
+
+/* Dark Mode Mobile Icon */
+.dark-mode .mobile-menu-icon {
+    color: white;
+}
+
+
 
     .nav-links {
         display: none;
