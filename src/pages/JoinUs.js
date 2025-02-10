@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./JoinUs.css"; // Import external styles
 
 const JoinUs = () => {
     const [formData, setFormData] = useState({
@@ -41,19 +42,41 @@ const JoinUs = () => {
     };
 
     return (
-        <div style={pageContainerStyle}>
-            <div style={formContainerStyle}>
-                <h2 style={titleStyle}>Join Our Team</h2>
-                <p style={subtitleStyle}>Fill out this form to stay updated and get involved.</p>
+        <div className="joinus-container">
+            {/* 🚀 Why Join Us Section */}
+            <div className="why-join">
+                <h1 className="join-title">Why Join Team Ray?</h1>
+                <p className="join-description">
+                    Our mission is to <span className="highlight">foster innovation</span>,
+                    collaborate across disciplines, and develop real-world engineering skills through
+                    aerospace projects. We design, build, and compete with cutting-edge rovers and rockets! 🚀
+                </p>
+
+                <ul className="join-benefits">
+                    <li>☄️ <strong>Exciting Competitions</strong> – Hands-on experience in aerospace challenges.</li>
+                    <li>☄️ <strong>Engaging Meet-ups</strong> – Connect with like-minded aerospace enthusiasts.</li>
+                    <li>☄️ <strong>Interesting Workshops</strong> – Learn from experts in engineering and space tech.</li>
+                </ul>
+
+                <p className="join-message">
+                    We welcome **ALL** students—whether from **Engineering** or simply passionate about **space exploration**. 
+                    Join us on this thrilling journey! 💫
+                </p>
+            </div>
+
+            {/* 📋 Join Us Form Section */}
+            <div className="form-container">
+                <h2 className="form-title">Join Our Team</h2>
+                <p className="form-subtitle">Fill out this form to stay updated and get involved.</p>
 
                 {successMessage ? (
-                    <div style={successBox}>
+                    <div className="success-box">
                         <h3>✅ Success!</h3>
                         <p>{successMessage}</p>
                     </div>
                 ) : (
-                    <form onSubmit={handleSubmit} style={formStyle}>
-                        {errorMessage && <p style={errorStyle}>{errorMessage}</p>}
+                    <form onSubmit={handleSubmit} className="join-form">
+                        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
                         <input
                             type="text"
@@ -62,7 +85,7 @@ const JoinUs = () => {
                             onChange={handleChange}
                             placeholder="Full Name *"
                             required
-                            style={inputStyle}
+                            className="form-input"
                         />
 
                         <input
@@ -72,7 +95,7 @@ const JoinUs = () => {
                             onChange={handleChange}
                             placeholder="Email *"
                             required
-                            style={inputStyle}
+                            className="form-input"
                         />
 
                         <input
@@ -81,7 +104,7 @@ const JoinUs = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="Phone (Optional)"
-                            style={inputStyle}
+                            className="form-input"
                         />
 
                         <textarea
@@ -90,10 +113,10 @@ const JoinUs = () => {
                             onChange={handleChange}
                             placeholder="Why do you want to join? (Optional)"
                             rows="4"
-                            style={textAreaStyle}
+                            className="form-textarea"
                         />
 
-                        <button type="submit" disabled={loading} style={buttonStyle}>
+                        <button type="submit" disabled={loading} className="form-button">
                             {loading ? "Submitting..." : "Join Now"}
                         </button>
                     </form>
@@ -101,89 +124,6 @@ const JoinUs = () => {
             </div>
         </div>
     );
-};
-
-// Page Container - Centers the form properly
-const pageContainerStyle = {
-    display: "flex",
-    justifyContent: "center",
-    minHeight: "60vh",
-    padding: "20px",
-    backgroundColor: "#f4f7fc",
-};
-
-// Form Container - Adds margin, proper width & shadow
-const formContainerStyle = {
-    maxWidth: "500px",
-    width: "100%",
-    padding: "30px",
-    boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
-    borderRadius: "15px",
-    backgroundColor: "#ffffff",
-    textAlign: "center",
-    fontFamily: "'Poppins', sans-serif",
-    marginTop: "50px",
-};
-
-// Title & Subtitle
-const titleStyle = {
-    fontSize: "24px",
-    fontWeight: "600",
-    marginBottom: "10px",
-    color: "#333",
-};
-
-const subtitleStyle = {
-    fontSize: "14px",
-    color: "#777",
-    marginBottom: "20px",
-};
-
-// Form & Inputs
-const formStyle = {
-    display: "flex",
-    flexDirection: "column",
-};
-
-const inputStyle = {
-    width: "100%",
-    padding: "12px",
-    marginBottom: "12px",
-    borderRadius: "8px",
-    border: "1px solid #ddd",
-    fontSize: "16px",
-    outline: "none",
-    transition: "border 0.3s ease",
-};
-
-const textAreaStyle = {
-    ...inputStyle,
-    resize: "none",
-};
-
-const buttonStyle = {
-    width: "100%",
-    padding: "12px",
-    backgroundColor: "#007BFF",
-    color: "white",
-    border: "none",
-    borderRadius: "8px",
-    fontSize: "16px",
-    cursor: "pointer",
-    transition: "background 0.3s ease",
-};
-
-// Success Box & Errors
-const successBox = {
-    padding: "20px",
-    backgroundColor: "#E6F4EA",
-    borderRadius: "10px",
-    color: "#155724",
-};
-
-const errorStyle = {
-    color: "red",
-    marginBottom: "10px",
 };
 
 export default JoinUs;

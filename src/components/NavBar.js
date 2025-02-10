@@ -52,7 +52,7 @@ const NavBar = () => {
                 {/* Navigation Links */}
                 <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
                     <li><Link to="/members" onClick={toggleMobileMenu}>About us</Link></li>
-                    <li><Link to="/news" onClick={toggleMobileMenu}>News and Events</Link></li>
+                    <li><Link to="/news" onClick={toggleMobileMenu}>News & Events</Link></li>
                     <li><Link to="/join" onClick={toggleMobileMenu}>Get in touch</Link></li>
                 </ul>
 

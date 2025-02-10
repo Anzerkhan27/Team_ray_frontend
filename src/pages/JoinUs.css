@@ -1,0 +1,139 @@
+/* 🔥 Join Us Page Styles */
+.joinus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 5%;
+    background-color: black; /* Space theme */
+    color: white;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s ease;
+}
+
+/* 🚀 Why Join Us Section */
+.why-join {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.join-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+.join-description, .join-message {
+    font-size: 1.2rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.join-benefits {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.join-benefits li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #5E2129; /* Deep Maroon */
+    font-weight: bold;
+}
+
+/* 📋 Join Us Form */
+.form-container {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle dark background */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.form-subtitle {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.join-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+    color: #bbb;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border: 1px solid #5E2129;
+}
+
+/* 🚀 Submit Button */
+.form-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5E2129; /* Deep Maroon */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #44151b;
+}
+
+/* ✅ Success Box */
+.success-box {
+    padding: 20px;
+    background-color: green;
+    border-radius: 10px;
+    color: #155724;
+}
+
+/* ❌ Error Messages */
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .join-title {
+        font-size: 2.5rem;
+    }
+
+    .join-description {
+        font-size: 1rem;
+    }
+}

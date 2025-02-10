@@ -28,6 +28,13 @@ const News = () => {
                             <div className="news-info">
                                 <h3>{post.title}</h3>
                                 <p>{post.content ? post.content.substring(0, 120) + "..." : "No content available."}</p>
+                                <p className="news-date">
+                                    📅 {new Date(post.created_at).toLocaleDateString("en-GB", {
+                                        day: "numeric",
+                                        month: "long",
+                                        year: "numeric",
+                                    })}
+                                </p>
                             </div>
                         </div>
                     ))}
