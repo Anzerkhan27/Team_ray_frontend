@@ -4,7 +4,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Keep content aligned to the bottom */
+    align-items: center; /* Keep content aligned to the bottom */
     text-align: center;
     font-family: "Roboto", sans-serif; /* Set default font to Roboto */
     background-color: white; /* Light mode background */

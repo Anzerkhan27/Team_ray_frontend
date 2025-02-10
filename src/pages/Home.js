@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import roverImage from "../assets/space_rover_black_bg.png"; // Import the image directly
+import roverImage from "../assets/Home_bg.jpg"; // Import the image directly
 import "./Home.css"; // Importing styles
 import Specifications from "../components/Specifications"; // Import the Specifications component
 import Mission from "../components/Mission";
