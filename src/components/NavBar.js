@@ -51,9 +51,8 @@ const NavBar = () => {
 
                 {/* Navigation Links */}
                 <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
-                    <li><Link to="/about" onClick={toggleMobileMenu}>About</Link></li>
-                    <li><Link to="/members" onClick={toggleMobileMenu}>Team</Link></li>
-                    <li><Link to="/projects" onClick={toggleMobileMenu}>Projects</Link></li>
+                    <li><Link to="/members" onClick={toggleMobileMenu}>About us</Link></li>
+                    <li><Link to="/news" onClick={toggleMobileMenu}>News and Events</Link></li>
                     <li><Link to="/join" onClick={toggleMobileMenu}>Get in touch</Link></li>
                 </ul>
 

@@ -81,6 +81,7 @@
     
 
 }
+/* 📌 Member Card */
 .member-card {
     width: 250px;
     cursor: pointer;
@@ -88,15 +89,17 @@
     border-radius: 10px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease; /* Improved smoothness */
     margin-top: 25px;
     margin-right: 50px;
+    will-change: transform, box-shadow; /* Optimizes animation */
 }
 
-/* 📌 Hover Effect */
+/* 📌 Hover Effect - Smooth Expansion */
 .member-card:hover {
     transform: scale(1.15);
-    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.4);
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s ease;
 }
 
 /* 📌 Member Image */
@@ -104,22 +107,37 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
+    transition: transform 0.4s ease-in-out; /* Ensures the image also smoothly scales */
+}
+
+/* 📌 On Hover, Slight Image Scale */
+.member-card:hover .member-image {
+    transform: scale(1.05); /* Subtle zoom on image */
 }
 
 /* 📌 Member Info */
 .member-info {
     padding: 12px;
+    transition: transform 0.4s ease-in-out;
 }
 
-.member-info h3 {
-    font-size: 1.2rem;
-    margin: 5px 0;
+/* 📌 On Hover, Slight Lift */
+.member-card:hover .member-info {
+    transform: translateY(-5px);
 }
 
-.member-info p {
-    font-size: 1rem;
-    color: #ddd;
+/* 🎨 Responsive Design */
+@media (max-width: 900px) {
+    .members-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card:hover {
+        transform: scale(1.05);
+    }
 }
+
 
 /* 🎨 Responsive Design */
 @media (max-width: 900px) {
@@ -143,17 +161,7 @@
         font-size: 2rem;
     }
 
-    .member-card:hover {
-        transform: scale(1.05);
-    }
-
-    .members-grid {
-        flex-direction: column; /* Stack members vertically on smaller screens */
-        align-items: center;
-    }
-
-    .member-card:hover {
-        transform: scale(1.05);
-    }
+    
+ 
 
 }
