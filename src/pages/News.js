@@ -7,7 +7,7 @@ const News = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/posts/") // ✅ Corrected URL
+        axios.get("https://web-production-7860.up.railway.app/api/posts/") // ✅ Corrected URL
             .then((response) => setPosts(response.data))
             .catch((error) => console.error("Error fetching posts:", error));
     }, []);

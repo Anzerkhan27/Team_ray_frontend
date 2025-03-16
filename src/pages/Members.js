@@ -10,15 +10,32 @@ const Members = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/members/")
+        // Try fetching from the backend API first
+        axios.get("https://web-production-7860.up.railway.app/api/members/")
             .then((response) => {
-                console.log("Fetched Members:", response.data);
+                console.log("Fetched Members from API:", response.data);
                 setMembers(response.data);
             })
             .catch((error) => {
-                console.error("Error fetching members:", error);
+                console.error("API request failed. Fetching from local JSON...", error);
+
+                // If API fails, fetch from static JSON
+                fetch("/data/members.json")
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log("Loaded fallback data from JSON file:", data);
+                        setMembers(data);
+                    })
+                    .catch((jsonError) => console.error("Error loading local JSON:", jsonError));
             });
     }, []);
+
+    // Function to resolve correct image path
+    const getImagePath = (image) => {
+        if (!image) return "https://via.placeholder.com/250"; // Fallback image
+        if (image.startsWith("http") || image.startsWith("/")) return image; // Use absolute URLs directly
+        return `/assets/members/${image}`; // Adjust for local static images
+    };
 
     const openModal = (member) => {
         console.log("Opening Modal for:", member.name);
@@ -67,7 +84,7 @@ const Members = () => {
                 {members.map((member) => (
                     <div key={member.id} className="member-card" onClick={() => openModal(member)}>
                         <img 
-                            src={member.image || "https://via.placeholder.com/250"} 
+                            src={getImagePath(member.image)} 
                             alt={member.name} 
                             className="member-image" 
                         />

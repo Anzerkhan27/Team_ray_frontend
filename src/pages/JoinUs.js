@@ -31,7 +31,7 @@ const JoinUs = () => {
         }
 
         try {
-            await axios.post("http://127.0.0.1:8000/api/contacts/", formData);
+            await axios.post("https://web-production-7860.up.railway.app/api/contacts/", formData);
             setSuccessMessage("🎉 You're in! We'll be in touch soon.");
             setFormData({ full_name: "", email: "", phone: "", message: "" });
         } catch (error) {

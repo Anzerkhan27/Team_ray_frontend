@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "role": "Software Engineer",
+    "bio": "John is an experienced software developer specializing in embedded systems.",
+    "image": "/assets/members/john_doe.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Alice Smith",
+    "role": "Mechanical Engineer",
+    "bio": "Alice leads the mechanical team for rover design.",
+    "image": "/assets/members/alice_smith.jpg"
+  }
+]
