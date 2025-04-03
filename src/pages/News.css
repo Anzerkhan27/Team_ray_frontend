@@ -1,3 +1,8 @@
+/* Add these imports if not already present */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
 .news-container {
     text-align: center;
     padding: 60px 5%;
