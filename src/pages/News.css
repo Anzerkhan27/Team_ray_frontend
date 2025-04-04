@@ -11,12 +11,25 @@
     font-family: Arial, sans-serif;
 }
 
+
 .news-title {
     font-size: 3rem;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin: 80px 0 40px 0; /* updated */
     letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
 }
+
+.slick-dots {
+    bottom: -30px !important;
+    ;
+}
+
+.news-card .slick-slider {
+    margin-bottom: 50px;
+}
+
 
 .news-grid {
     display: grid;
