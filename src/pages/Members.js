@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MemberModal from "./MemberModal";
-import teamRayLogo from "../assets/Team_ray_Logo.png"; // ✅ Import Team Ray Logo
+import teamRayLogo from "../assets/Team_logo.png"; // ✅ Import Team Ray Logo
 import "./Members.css"; // Import external styles
 
 const Members = () => {

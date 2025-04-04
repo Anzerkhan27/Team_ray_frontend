@@ -29,21 +29,38 @@
 }
 
 /* Override Global h1, h2 */
+.members-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    font-family: "Roboto", sans-serif; /* Default system font */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Override Global h1, h2 */
 .team-title, .members-title {
     font-size: 2.8rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: white;
-    font-family: Arial, sans-serif; /* Default system font */
+    font-family: "Roboto";
     text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    padding-top:20px ;
+    padding-bottom: 20px;
 }
+
+
+
 
 .team-description, .team-mission {
     font-size: 1.2rem;
     color: #ddd;
     line-height: 1.6;
-    font-family: Arial, sans-serif; /* Default system font */
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Highlighting Key Words */
@@ -145,6 +162,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 20px;
     }
 
     .team-intro {
@@ -161,7 +179,9 @@
         font-size: 2rem;
     }
 
-    
+    .team-description {
+        font-size: 1rem;
+    }
  
 
 }
