@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import marsBg from "../assets/Missions_bg.png"; // Importing new Mars background
+import marsBg from "../assets/Home_bg.png"; // Importing new Mars background
 import "./Mission.css"; 
 
 const Mission = () => {
