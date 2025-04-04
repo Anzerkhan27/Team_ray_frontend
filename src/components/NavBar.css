@@ -1,189 +1,83 @@
-/* General Navbar */
+/* NavBar.css */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    padding-top: 15px; /* Reduced top padding */
-    padding-bottom: 15px; /* Reduced bottom padding */
-    padding-left: 30px;
-    padding-right: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
+    padding: 1rem;
+    background: transparent;
     z-index: 1000;
-    background-color: transparent; /* Transparent background in both modes */
-    box-shadow: none; /* Remove any shadow */
+    transition: 0.3s ease;
 }
 
-/* When Scrolled - Opaque Navbar */
 .navbar.scrolled {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: white;
-    opacity: 1;
-    font-size: 0.8rem;
+    background: black;
 }
 
-/* Dark Mode when Scrolled */
-.dark-mode .navbar.scrolled {
-    background-color: black;
-    opacity: 1;
-}
-
-/* Navbar Container */
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Added for better positioning */
 }
 
-/* Logo */
 .logo {
-    font-size: 18px;
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-/* Reduced Logo Size When Scrolled */
-.navbar.scrolled .logo {
-    font-size: 14px;
-}
-
-/* Dark Mode Logo */
-.dark-mode .logo {
     color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Navigation Links */
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 15px;
-    font-family: "Inter", sans-serif;
-}
-
-.nav-links li {
-    font-size: 15px;
-    transition: font-size 0.3s ease;
-}
-
-/* Reduced Font Size for Links When Scrolled */
-.navbar.scrolled .nav-links li {
-    font-size: 12px;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
-    color: black;
+    color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-/* Dark Mode nav links */
-.dark-mode .nav-links a {
-    color: white;
-}
-
-/* Hover Effect */
-.nav-links a:hover {
-    color: #5E2129;
-}
-
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-    background: transparent;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-/* Dark Mode Toggle in Dark Mode */
-.dark-mode .dark-mode-toggle {
-    color: white;
-}
-
-/* Mobile Menu Icon */
 .mobile-menu-icon {
     display: none;
     background: none;
     border: none;
-    color: black;
-    cursor: pointer;
-    font-size: 22px;
-    transition: color 0.3s ease;
-}
-
-/* Dark Mode Mobile Icon */
-.dark-mode .mobile-menu-icon {
     color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-.dark-mode .logo-maroon {
-    color: #520C17
-}
-
-/* Mobile Menu */
 @media (max-width: 768px) {
-    /* Mobile Menu Icon - Align to Right */
-/* Mobile Menu Icon - Align to Right */
-.mobile-menu-icon {
-    display: block;
-    background: none;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-size: 22px;
-    transition: color 0.3s ease;
-    margin-left: auto; /* Pushes the icon to the right */
-}
-
-/* Dark Mode Mobile Icon */
-.dark-mode .mobile-menu-icon {
-    color: white;
-}
-
-
+    .mobile-menu-icon {
+        display: block;
+        z-index: 1001;
+    }
 
     .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        text-align: center;
-        padding: 20px 0;
-        z-index: 999;
-    }
-
-    .dark-mode .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Changed from right to left */
+        width: 80%; /* Reduced width */
+        height: 100vh;
         background: black;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* Align to left */
+        padding-left: 2rem; /* Add left padding */
+        transition: 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2); /* Add shadow */
     }
-      
+
     .nav-links.open {
-        display: flex;
+        left: 0; /* Changed from right to left */
     }
 
-    .nav-links li {
-        padding: 15px 0;
-    }
-
-    .nav-links a {
-        color: black;
-        font-size: 18px;
-    }
-
-    .dark-mode .nav-links a {
-        color: white;
+    /* Keep the menu button visible */
+    .navbar-container {
+        justify-content: space-between;
     }
 }

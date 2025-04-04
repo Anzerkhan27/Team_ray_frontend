@@ -4,12 +4,12 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; /* Keep content aligned to the bottom */
+    align-items: center;
     text-align: center;
-    font-family: "Roboto", sans-serif; /* Set default font to Roboto */
-    background-color: white; /* Light mode background */
+    font-family: "Roboto", sans-serif;
+    background-color: black; /* Dark mode background */
+    color: white; /* Dark mode text */
     transition: background 0.3s ease;
-    overflow: hidden;
 }
 
 /* Background Image */
@@ -39,7 +39,7 @@
     font-size: 4rem; /* Larger font size */
     font-weight: bold;
     margin-bottom: 2px;
-    color: white; /* Light mode text */
+    color: white; /* Dark mode text */
 }
 
 /* Hero Subtitle - Roboto */
@@ -49,12 +49,7 @@
     font-weight: 500; /* Semi-bold */
     margin-top: 1px;
     margin-bottom: 10px;
-    color: white; /* Light mode text */
-}
-
-/* Dark Mode Text */
-.dark-mode .hero-content h1 {
-    color: white;
+    color: white; /* Dark mode text */
 }
 
 /* Hero Subtitle */
@@ -62,12 +57,7 @@
     font-family: "Roboto", sans-serif; /* Roboto for the paragraph text */
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #ddd; /* Light mode text */
-}
-
-/* Dark Mode Subtitle */
-.dark-mode .hero-content p {
-    color: #ddd;
+    color: #ddd; /* Light grey for readability */
 }
 
 /* Scroll Down Indicator */
@@ -79,11 +69,7 @@
     color: white;
 }
 
-/* Dark Mode Scroll Down */
-.dark-mode .scroll-down {
-    color: white;
-}
-
+/* Scroll Down Indicator Animation */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
