@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Projects from "../components/Projects"; // ✅ Import Projects component
-import Slider from "react-slick"; // Slick carousel component
-import "./News.css"; // Unified styles
+import Projects from "../components/Projects";
+import Slider from "react-slick";
+import "./News.css";
 
 const News = () => {
     const [posts, setPosts] = useState([]);
@@ -24,18 +24,23 @@ const News = () => {
         autoplaySpeed: 3000,
     };
 
+    // Function to toggle content visibility
+    const toggleContent = (index) => {
+        const updatedPosts = [...posts];
+        updatedPosts[index].isExpanded = !updatedPosts[index].isExpanded;  // Toggle the expanded state
+        setPosts(updatedPosts);
+    };
+
     return (
         <div className="news-container">
-            {/* 📰 News Section */}
             <div className="news-section">
                 <h1 className="section-title">Latest News</h1>
                 <div className="news-grid">
-                    {posts.map((post) => (
+                    {posts.map((post, index) => (
                         <div key={post.id} className="news-card">
-                            {/* Carousel for images */}
                             <Slider {...settings}>
-                                {post.images && post.images.map((image, index) => (
-                                    <div key={index}>
+                                {post.images && post.images.map((image, imageIndex) => (
+                                    <div key={imageIndex}>
                                         <img
                                             src={image.image || "https://via.placeholder.com/400"}
                                             alt={post.title}
@@ -46,7 +51,25 @@ const News = () => {
                             </Slider>
                             <div className="news-info">
                                 <h3>{post.title}</h3>
-                                <p>{post.content ? post.content.substring(0, 120) + "..." : "No content available."}</p>
+                                <p>
+                                    {post.content && !post.isExpanded 
+                                        ? post.content.substring(0, 120) + "..." 
+                                        : post.content}
+                                </p>
+                                {!post.isExpanded && post.content && (
+                                    <button 
+                                        className="read-more-btn" 
+                                        onClick={() => toggleContent(index)}>
+                                        Read More
+                                    </button>
+                                )}
+                                {post.isExpanded && (
+                                    <button 
+                                        className="read-more-btn" 
+                                        onClick={() => toggleContent(index)}>
+                                        Show Less
+                                    </button>
+                                )}
                                 <p className="news-date">
                                     📅 {new Date(post.created_at).toLocaleDateString("en-GB", {
                                         day: "numeric",
@@ -60,10 +83,8 @@ const News = () => {
                 </div>
             </div>
 
-            {/* 🚀 Divider */}
             <div className="section-divider"></div>
 
-            {/* 🚀 Projects Section (Imported Component) */}
             <Projects />
         </div>
     );

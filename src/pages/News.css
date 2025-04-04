@@ -62,3 +62,19 @@
     font-size: 0.9rem;
     color: #777;
 }
+
+
+.read-more-btn {
+
+    background-color:  rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.read-more-btn:hover {
+    background-color: #520C17;
+}
