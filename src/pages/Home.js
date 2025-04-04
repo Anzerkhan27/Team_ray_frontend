@@ -11,7 +11,7 @@ const Home = () => {
         <>
             {/* Hero Section */}
             <div className="home-container" style={{
-                backgroundImage: `url(${roverImage})`, // Use the imported image here
+             // backgroundImage: `url(${roverImage})`, // Use the imported image here
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 transition: "opacity 2s ease",

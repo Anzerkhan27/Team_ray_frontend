@@ -1,83 +1,140 @@
-/* NavBar.css */
+/* General Navbar */
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    padding: 1rem;
-    background: transparent;
+    /* Moved 30px horizontal padding into a larger-screen media query (see below) */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
     z-index: 1000;
-    transition: 0.3s ease;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .navbar.scrolled {
-    background: black;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: black;
+    opacity: 1;
+    font-size: 0.8rem;
 }
 
+/* Wrap the container's max-width and extra padding in a media query */
+@media (min-width: 769px) {
+  .navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* Navbar Container */
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    /* Removed max-width so that it does not squeeze on mobile; 
+       reintroduce it only on larger screens if desired */
+}
+
+@media (min-width: 769px) {
+  .navbar-container {
     max-width: 1200px;
-    margin: 0 auto;
-    position: relative; /* Added for better positioning */
+  }
 }
 
+/* Logo */
 .logo {
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
+.navbar.scrolled .logo {
+    font-size: 14px;
+}
+
+/* Navigation Links */
 .nav-links {
-    display: flex;
-    gap: 2rem;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    gap: 15px;
+    font-family: "Inter", sans-serif;
+}
+
+.nav-links li {
+    font-size: 15px;
+    transition: font-size 0.3s ease;
+}
+
+.navbar.scrolled .nav-links li {
+    font-size: 12px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+/* Hover Effect */
+.nav-links a:hover {
+    color: #5E2129;
+}
+
+/* Mobile Menu Icon */
 .mobile-menu-icon {
     display: none;
     background: none;
     border: none;
     color: white;
-    font-size: 1.5rem;
     cursor: pointer;
+    font-size: 22px;
+    transition: color 0.3s ease;
 }
 
+/* Mobile Menu */
 @media (max-width: 768px) {
+
+    /* Show the hamburger icon on mobile */
     .mobile-menu-icon {
         display: block;
-        z-index: 1001;
+        margin-left: auto;
     }
 
+    /* Hide the nav-links by default and show them as a dropdown */
     .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%; /* Changed from right to left */
-        width: 80%; /* Reduced width */
-        height: 100vh;
-        background: black;
+        display: none;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-start; /* Align to left */
-        padding-left: 2rem; /* Add left padding */
-        transition: 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.2); /* Add shadow */
+        position: absolute;
+        top: 60px; /* Adjust if needed so the menu sits just under the navbar */
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+        padding: 20px 0;
+        z-index: 999;
     }
-
+    
     .nav-links.open {
-        left: 0; /* Changed from right to left */
+        display: flex;
     }
 
-    /* Keep the menu button visible */
-    .navbar-container {
-        justify-content: space-between;
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .nav-links a {
+        color: black;
+        font-size: 18px;
     }
 }
