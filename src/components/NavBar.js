@@ -1,54 +1,57 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
-import "./NavBar.css"; 
+import { FiMenu, FiX } from "react-icons/fi";
+import "./NavBar.css";
 
 const NavBar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu state
+  const [isOpen, setIsOpen] = useState(false);
 
-    // Detect Scroll
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  // Toggles the mobile slider
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
+  // Close the slider when a link is clicked
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
+  return (
+    <header className="navbar">
+      <div className="navbar-content">
+        {/* Logo */}
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+          TEAM <span className="logo-maroon">RAY</span>
+        </Link>
 
-    // Toggle Mobile Menu
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+        {/* Hamburger / Close icon */}
+        <button className="navbar-toggle" onClick={handleToggle}>
+          {isOpen ? <FiX /> : <FiMenu />}
+        </button>
 
-    return (
-        <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-            <div className="navbar-container">
-                {/* Logo */}
-                <Link to="/" className="logo">
-                    TEAM <span className="logo-maroon">RAY</span>
-                </Link>
-
-                {/* Mobile Menu Icon */}
-                <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
-                    {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-                </button>
-
-                {/* Navigation Links */}
-                <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
-                    <li><Link to="/members" onClick={toggleMobileMenu}>About us</Link></li>
-                    <li><Link to="/news" onClick={toggleMobileMenu}>News & Events</Link></li>
-                    <li><Link to="/join" onClick={toggleMobileMenu}>Get in touch</Link></li>
-                </ul>
-
-            </div>
+        {/* Nav Links (desktop + mobile slider) */}
+        <nav className={`navbar-links ${isOpen ? "open" : ""}`}>
+          <ul>
+            <li>
+              <Link to="/members" onClick={closeMenu}>
+                About us
+              </Link>
+            </li>
+            <li>
+              <Link to="/news" onClick={closeMenu}>
+                News &amp; Events
+              </Link>
+            </li>
+            <li>
+              <Link to="/join" onClick={closeMenu}>
+                Get in touch
+              </Link>
+            </li>
+          </ul>
         </nav>
-    );
+      </div>
+    </header>
+  );
 };
 
 export default NavBar;
-
-
-

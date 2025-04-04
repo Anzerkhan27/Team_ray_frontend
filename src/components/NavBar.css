@@ -1,140 +1,139 @@
-/* General Navbar */
-.navbar {
-    position: fixed;
+/***********************************************
+  BASIC RESET (optional)
+***********************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /***********************************************
+    NAVBAR BASE
+  ***********************************************/
+  .navbar {
+    position: fixed;     /* stays at top */
     top: 0;
     left: 0;
     width: 100%;
-    /* Moved 30px horizontal padding into a larger-screen media query (see below) */
-    padding-top: 15px;
-    padding-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-.navbar.scrolled {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: black;
-    opacity: 1;
-    font-size: 0.8rem;
-}
-
-/* Wrap the container's max-width and extra padding in a media query */
-@media (min-width: 769px) {
-  .navbar {
-    padding-left: 30px;
-    padding-right: 30px;
+    background-color: black;  /* black bg */
+    z-index: 999;       /* on top of other elements */
   }
-}
-
-/* Navbar Container */
-.navbar-container {
+  
+  .navbar-content {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    /* Removed max-width so that it does not squeeze on mobile; 
-       reintroduce it only on larger screens if desired */
-}
-
-@media (min-width: 769px) {
-  .navbar-container {
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
   }
-}
-
-/* Logo */
-.logo {
-    font-size: 18px;
+  
+  /***********************************************
+    LOGO
+  ***********************************************/
+  .navbar-logo {
+    font-size: 1.2rem;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-    color: white;
     text-decoration: none;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-.navbar.scrolled .logo {
-    font-size: 14px;
-}
-
-/* Navigation Links */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    font-family: "Inter", sans-serif;
-}
-
-.nav-links li {
-    font-size: 15px;
-    transition: font-size 0.3s ease;
-}
-
-.navbar.scrolled .nav-links li {
-    font-size: 12px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* Hover Effect */
-.nav-links a:hover {
-    color: #5E2129;
-}
-
-/* Mobile Menu Icon */
-.mobile-menu-icon {
-    display: none;
+    color: white; 
+  }
+  
+  .logo-maroon {
+    color: #5E2129; /* maroon */
+  }
+  
+  /***********************************************
+    TOGGLE (HAMBURGER / X)
+  ***********************************************/
+  .navbar-toggle {
+    display: none;          /* hidden on desktop */
     background: none;
     border: none;
-    color: white;
     cursor: pointer;
-    font-size: 22px;
-    transition: color 0.3s ease;
-}
-
-/* Mobile Menu */
-@media (max-width: 768px) {
-
-    /* Show the hamburger icon on mobile */
-    .mobile-menu-icon {
-        display: block;
-        margin-left: auto;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  /***********************************************
+    NAV LINKS - DESKTOP STYLE
+  ***********************************************/
+  .navbar-links {
+    display: flex;          /* horizontally on desktop */
+    list-style: none;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  .navbar-links li a {
+    color: white;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    transition: color 0.3s;
+  }
+  
+  /* Hover: maroon color */
+  .navbar-links li a:hover {
+    color: #5E2129;
+  }
+  
+  /***********************************************
+    SLIDER MENU (MOBILE)
+  ***********************************************/
+  @media (max-width: 768px) {
+    /* Show the toggle button on mobile */
+    .navbar-toggle {
+      display: block;
     }
-
-    /* Hide the nav-links by default and show them as a dropdown */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust if needed so the menu sits just under the navbar */
-        left: 0;
-        width: 100%;
-        background: white;
-        text-align: center;
-        padding: 20px 0;
-        z-index: 999;
+  
+    /* Hide normal horizontal layout on mobile */
+    .navbar-links {
+      /* The SLIDER is initially hidden off-screen */
+      position: fixed;
+      top: 0;
+      left: -100%;         /* move it off to the left */
+      width: 250px;        /* drawer width (adjust as desired) */
+      height: 100vh;       /* full height */
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 4rem;   /* space below top for the close icon area */
+      transition: left 0.3s ease;
     }
-    
-    .nav-links.open {
-        display: flex;
+  
+    /* When "open" class is added, slide in from left: 0 */
+    .navbar-links.open {
+      left: 0;
     }
-
-    .nav-links li {
-        padding: 15px 0;
+  
+    .navbar-links ul {
+      flex-direction: column;
+      gap: 1rem;
+      padding-left: 1rem;
     }
-
-    .nav-links a {
-        color: black;
-        font-size: 18px;
+  
+    /* Mobile link styles */
+    .navbar-links li a {
+      color: white;
+      font-size: 1.1rem;
     }
-}
+  }
+  
+  /***********************************************
+    PAGE CONTENT SPACING
+  ***********************************************/
+  /* Because the navbar is position: fixed, 
+     your page content can hide behind it. 
+     Add top margin to your main content:
+  
+  .page-content {
+    margin-top: 70px; // ~navbar height
+  }
+  
+  */
+  
