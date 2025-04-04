@@ -1,35 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import "./NavBar.css";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Toggles the mobile slider
+  // Handle scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); // trigger at 50px scroll
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  // Close the slider when a link is clicked
   const closeMenu = () => {
     setIsOpen(false);
   };
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-content">
-        {/* Logo */}
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           TEAM <span className="logo-maroon">RAY</span>
         </Link>
 
-        {/* Hamburger / Close icon */}
         <button className="navbar-toggle" onClick={handleToggle}>
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
 
-        {/* Nav Links (desktop + mobile slider) */}
         <nav className={`navbar-links ${isOpen ? "open" : ""}`}>
           <ul>
             <li>
