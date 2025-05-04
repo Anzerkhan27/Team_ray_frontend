@@ -60,7 +60,7 @@ This ensures faster image loading and reduces backend server load.
 
 ---
 
-
+<!-- 
 
 📁 **File Structure (Simplified)**
 
@@ -88,7 +88,7 @@ src/
 4️⃣ Start development server
 `npm run dev`
 
----
+--- -->
 
 🚀 **Deployment**
 
