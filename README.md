@@ -5,7 +5,7 @@
 
 This is the **React frontend** for **Team Ray**, the University of Huddersfield’s **first aerospace student society**. It serves as the official site for sharing updates, showcasing the team, and collecting member signups.
 
-🌐 Live Site: [https://team-ray-frontend.pages.dev](https://team-ray-frontend.pages.dev)
+🌐 Live Site: [https://teamray.team](https://teamray.team)
 
 ---
 
@@ -44,6 +44,24 @@ Endpoints used:
 
 ---
 
+📸 **Image Hosting with Cloudinary**
+
+All media content (member photos, project images, post galleries) served via the API is now hosted on **Cloudinary** for faster performance and global delivery via CDN.
+
+The frontend dynamically renders these images using the URLs returned from the API — no extra configuration needed on the frontend side.
+
+Example URL:
+
+```
+https://res.cloudinary.com/<cloud-name>/image/upload/v.../image.jpg
+```
+
+This ensures faster image loading and reduces backend server load.
+
+---
+
+
+
 📁 **File Structure (Simplified)**
 
 src/
@@ -80,11 +98,11 @@ src/
 ---
 
 👨‍💻 **Maintainer**
-Built with love by **Anzer Khan**
+Built by **Anzer Khan**
 🧠 Software Lead & Founding Committee Member, Team Ray
 
-🔗 LinkedIn: [https://linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-🌍 Portfolio: [https://your-portfolio.com](https://your-portfolio.com)
+🔗 LinkedIn: [https://linkedin.com/in/anzer-khan-31a14a209](https://linkedin.com/in/anzer-khan-31a14a209)
+
 
 ---
 
