@@ -60,9 +60,11 @@ This ensures faster image loading and reduces backend server load.
 
 ---
 
-<!-- 
+
 
 📁 **File Structure (Simplified)**
+
+```
 
 src/
 ├── assets/ → Images, logos, etc.
@@ -71,6 +73,7 @@ src/
 ├── App.js → App layout & routes
 ├── index.css → Tailwind base styles
 
+```
 ---
 
 🛠️ **Run Locally**
@@ -88,7 +91,7 @@ src/
 4️⃣ Start development server
 `npm run dev`
 
---- -->
+---
 
 🚀 **Deployment**
 
