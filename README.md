@@ -76,7 +76,7 @@ src/
 🛠️ **Run Locally**
 
 1️⃣ Clone the repo
-`git clone https://github.com/your-username/team-ray-frontend.git`
+`git clone https://github.com/AnzerKhan27/team-ray-frontend.git`
 `cd team-ray-frontend`
 
 2️⃣ Install dependencies
