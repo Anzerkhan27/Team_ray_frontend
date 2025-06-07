@@ -76,7 +76,11 @@
     display: block;
     filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
   }
+
   
+.ray-highlight {
+  color:  #5E2129; /* bright red, adjust if needed */
+}
 
 
 /* Scroll Down Indicator Animation */
@@ -113,5 +117,9 @@
       font-size: 16px;
       bottom: 15px;
     }
+
+    .ray-highlight {
+  color:  #5E2129; /* bright red, adjust if needed */
+}
   }
   
