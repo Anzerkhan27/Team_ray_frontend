@@ -1,31 +1,70 @@
-/* Footer Styles */
+/* === Footer Styles === */
 .footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: black; /* Dark mode footer */
-    color: white; /* Dark mode text */
+  background-color: #000;
+  color: white;
+  padding: 40px 20px 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Footer Logos */
+/* === Logos === */
 .footer-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px; /* Increased space between logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .footer-logos img {
-    height: 55px; /* Increased logo size */
-    object-fit: contain; /* Prevent distortion */
+  height: 55px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* Mobile Responsiveness */
+.footer-logos img:hover {
+  transform: scale(1.05);
+}
+
+/* === Social Icons === */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-socials a {
+  color: #ccc;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #5E2129;
+}
+
+/* === Copyright === */
+.footer-copy {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* === Mobile === */
 @media (max-width: 768px) {
-    .footer-logos {
-        flex-direction: column;
-        gap: 15px; /* Slightly increased gap for better spacing */
-    }
-    .footer-logos img {
-        height: 40px; /* Increased logo size for smaller screens */
-    }
+  .footer-logos {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-logos img {
+    height: 45px;
+  }
+
+  .footer-socials {
+    gap: 16px;
+  }
 }
