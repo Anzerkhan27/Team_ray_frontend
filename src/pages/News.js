@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Projects from "../components/Projects";
 import Slider from "react-slick";
 import "./News.css";
 
@@ -84,6 +85,7 @@ const News = () => {
 
             <div className="section-divider"></div>
 
+            <Projects />
         </div>
     );
 };
