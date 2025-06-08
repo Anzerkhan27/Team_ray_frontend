@@ -1,139 +1,159 @@
-/* 🔥 Join Us Page Styles */
+/* === Page Container === */
 .joinus-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 5%;
-    background-color: black; /* Space theme */
-    color: white;
-    font-family: Arial, sans-serif;
-    transition: background 0.3s ease;
+  background-color: #000;
+  color: #fff;
+  padding: 80px 40px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 🚀 Why Join Us Section */
+/* === Title Section === */
 .why-join {
-    max-width: 800px;
-    text-align: center;
-    margin-bottom: 50px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto 60px auto;
+  text-align: left;
 }
 
 .join-title {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-.join-description, .join-message {
-    font-size: 1.2rem;
-    color: #ddd;
-    line-height: 1.6;
+.join-description,
+.join-message {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #ccc;
+  margin-bottom: 20px;
 }
 
 .join-benefits {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    max-width: 600px;
-    margin: 20px auto;
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
 }
 
 .join-benefits li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: #5E2129; /* Deep Maroon */
-    font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5E2129;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* 📋 Join Us Form */
+/* === Form Container === */
 .form-container {
-    max-width: 500px;
-    width: 100%;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.05); /* Subtle dark background */
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.08);
+  text-align: left;
 }
 
+/* === Form Titles === */
 .form-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: white;
 }
 
 .form-subtitle {
-    font-size: 1rem;
-    color: #bbb;
-    margin-bottom: 20px;
+  font-size: 1.05rem;
+  color: #bbb;
+  margin-bottom: 25px;
 }
 
-/* Inputs */
+/* === Form Elements === */
 .join-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.form-input, .form-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    outline: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    transition: all 0.3s ease;
+.form-input,
+.form-textarea {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
 }
 
-.form-input::placeholder, .form-textarea::placeholder {
-    color: #bbb;
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #bbb;
 }
 
-.form-input:focus, .form-textarea:focus {
-    border: 1px solid #5E2129;
+.form-input:focus,
+.form-textarea:focus {
+  border: 1px solid #5E2129;
+  outline: none;
 }
 
-/* 🚀 Submit Button */
+/* === Submit Button === */
 .form-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #5E2129; /* Deep Maroon */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  padding: 12px;
+  background-color: #5E2129;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .form-button:hover {
-    background-color: #44151b;
+  background-color: #44151b;
 }
 
-/* ✅ Success Box */
+/* === Success + Error Feedback === */
 .success-box {
-    padding: 20px;
-    background-color: green;
-    border-radius: 10px;
-    color: #155724;
+  padding: 20px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
-/* ❌ Error Messages */
 .error-message {
-    color: red;
-    margin-bottom: 10px;
+  color: #ff6b6b;
+  margin-bottom: 10px;
 }
 
-/* 📱 Responsive */
+/* === Responsive === */
 @media (max-width: 768px) {
-    .join-title {
-        font-size: 2.5rem;
-    }
+  .join-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
 
-    .join-description {
-        font-size: 1rem;
-    }
+  .why-join {
+    text-align: center;
+    padding: 0;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .form-subtitle {
+    text-align: center;
+  }
 }

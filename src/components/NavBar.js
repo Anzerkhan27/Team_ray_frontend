@@ -39,7 +39,7 @@ const NavBar = () => {
           <ul>
             <li>
               <Link to="/members" onClick={closeMenu}>
-                About us
+                Meet the Team
               </Link>
             </li>
             <li>

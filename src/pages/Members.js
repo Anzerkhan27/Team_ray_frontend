@@ -42,7 +42,14 @@ const Members = () => {
 
     return (
         <div className="members-container">
-            <h1 className="members-title">Meet Team Ray</h1>
+            <div className="team-description-wrapper">
+            <div className="team-description-content">
+                <h2>About Our Team</h2>
+                <p>
+                We are a multidisciplinary student team from the <span className="highlight">University of Huddersfield</span>, combining expertise in aerospace, mechanical, software, and electrical engineering to design and build competitive rover systems.
+                </p>
+            </div>
+            </div>
 
             <div className="members-grid">
                 {members.map((member) => (
