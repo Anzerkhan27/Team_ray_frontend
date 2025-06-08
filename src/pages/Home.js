@@ -6,6 +6,8 @@ import Specifications from "../components/Specifications"; // Import the Specifi
 import Mission from "../components/Mission";
 import heroLogo from "../assets/Hero-logo-1.png"; // Adjust if named differently
 import About from "../components/About"; // Add this import
+import Projects from "../components/Projects";
+
 
 const Home = () => {
     return (
@@ -66,6 +68,8 @@ const Home = () => {
 
             {/* Specifications Section (Now correctly placed below Hero Section) */}
             <About />
+               {/* Current Projects Section */}
+            <Projects />
             <Specifications />
             <Mission />
             
