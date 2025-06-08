@@ -89,40 +89,40 @@ const Home = () => {
             {/* About Section */}
             <About />
 
-            {/* Featured Projects Section */}
+          {/* Featured Projects Section */}
             <div className="projects-section">
-                <div className="projects-wrapper">
-                    <h1 className="section-title">Featured Projects</h1>
-                    <div className="projects-grid">
-                        {primaryProject && (
-                            <div key={primaryProject.id} className="project-card">
-                                <img
-                                    src={primaryProject.image || "https://via.placeholder.com/400"}
-                                    alt={primaryProject.name}
-                                    className="project-image"
-                                />
-                                <div className="project-info">
-                                    <h3>{primaryProject.name}</h3>
-                                    <p>{primaryProject.description?.substring(0, 120)}...</p>
-                                </div>
-                            </div>
-                        )}
-                        {secondaryProject && (
-                            <div key={secondaryProject.id} className="project-card">
-                                <img
-                                    src={secondaryProject.image || "https://via.placeholder.com/400"}
-                                    alt={secondaryProject.name}
-                                    className="project-image"
-                                />
-                                <div className="project-info">
-                                    <h3>{secondaryProject.name}</h3>
-                                    <p>{secondaryProject.description?.substring(0, 120)}...</p>
-                                </div>
-                            </div>
-                        )}
+            <div className="projects-wrapper">
+                <h1 className="section-title">Featured Projects</h1>
+
+                {primaryProject && (
+                <div className="primary-showcase">
+                    <img
+                    src={primaryProject.image || "https://via.placeholder.com/400"}
+                    alt={primaryProject.name}
+                    className="primary-image"
+                    />
+                    <div className="primary-description">
+                    <h3>{primaryProject.name}</h3>
+                    <p>{primaryProject.description}</p>
                     </div>
                 </div>
+                )}
+
+                {secondaryProject && (
+                <div className="project-card secondary">
+                    <img
+                    src={secondaryProject.image || "https://via.placeholder.com/400"}
+                    alt={secondaryProject.name}
+                    className="project-image"
+                    />
+                    <div className="project-info">
+                    <h3>{secondaryProject.name}</h3>
+                    </div>
+                </div>
+                )}
             </div>
+            </div>
+
 
             {/* Remaining Sections */}
             <Specifications />
